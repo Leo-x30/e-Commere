@@ -3,6 +3,7 @@ import 'package:e_commerce/Api/model/Home/Home_Cubit.dart';
 import 'package:e_commerce/Data/BrandsAndCategory.dart';
 import 'package:e_commerce/Data/RowBulider.dart';
 import 'package:e_commerce/Data/appColor.dart';
+import 'package:e_commerce/UI/Cart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -59,7 +60,10 @@ class Home extends StatelessWidget {
                           ],
                         ),
                       ),
-                      InkWell(child: Icon(Icons.shopping_cart, color: Colors.blue)),
+                      InkWell(child: Icon(Icons.shopping_cart, color: Colors.blue),
+                      onTap: (){
+                        Navigator.of(context).pushNamed(Cart.routname);
+                      },),
                     ],
                   ),
                   SizedBox(
