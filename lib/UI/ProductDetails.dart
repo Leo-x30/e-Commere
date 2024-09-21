@@ -7,7 +7,7 @@ import 'package:readmore/readmore.dart';
 import '../Api/model/ProductPage/product_responce.dart';
 
 class ProductDetailsPage extends StatelessWidget {
-  static const String roteName = "ProductDetailsPage";
+  static const String routeName = "ProductDetailsPage";
 
   @override
   Widget build(BuildContext context) {

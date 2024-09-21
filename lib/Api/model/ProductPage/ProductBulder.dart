@@ -4,9 +4,9 @@ import 'package:e_commerce/UI/ProductDetails.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class Productbulder extends StatelessWidget {
+class Productbuilder extends StatelessWidget {
   List<Data> products;
-  Productbulder({required this.products});
+  Productbuilder({required this.products});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -16,7 +16,7 @@ class Productbulder extends StatelessWidget {
         itemBuilder: (context, index) {
           return InkWell(
             onTap: () {
-              Navigator.pushNamed(context, ProductDetailsPage.roteName,
+              Navigator.pushNamed(context, ProductDetailsPage.routeName,
                   arguments: products[index]);
             },
             child: ProductCard(

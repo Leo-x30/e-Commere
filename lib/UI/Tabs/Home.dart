@@ -59,7 +59,7 @@ class Home extends StatelessWidget {
                           ],
                         ),
                       ),
-                      Icon(Icons.shopping_cart, color: Colors.blueAccent),
+                      InkWell(child: Icon(Icons.shopping_cart, color: Colors.blue)),
                     ],
                   ),
                   SizedBox(

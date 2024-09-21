@@ -19,7 +19,7 @@ class Category extends StatelessWidget {
                 ? Center(
                     child: CircularProgressIndicator(),
                   )
-                : Productbulder(
+                : Productbuilder(
                     products: productCubit.Product,
                   );
           }),

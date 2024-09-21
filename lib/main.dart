@@ -1,4 +1,5 @@
 import 'package:e_commerce/Data/SharedPreference_pacakge.dart';
+import 'package:e_commerce/UI/Cart.dart';
 import 'package:e_commerce/UI/Home_Screen.dart';
 import 'package:e_commerce/UI/Login_Screen.dart';
 import 'package:e_commerce/UI/SignUp_Screen.dart';
@@ -40,7 +41,8 @@ class MyApp extends StatelessWidget {
               SignUpScreen.routName: (context) => SignUpScreen(),
               LoginScreen.routName: (context) => LoginScreen(),
               HomeScreen.routName: (context) => HomeScreen(),
-              ProductDetailsPage.roteName: (context) => ProductDetailsPage(),
+              ProductDetailsPage.routeName: (context) => ProductDetailsPage(),
+              Cart.routname: (context) => Cart()
             },
           );
         });
