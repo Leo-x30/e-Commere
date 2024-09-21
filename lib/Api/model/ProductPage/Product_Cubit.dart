@@ -19,7 +19,6 @@ class ProductCubit extends Cubit<ProductStates> {
       } else {
         Product = response.data ?? [];
         emit(ProductSuccessStates(response: response));
-        print("loading finished");
       }
     } catch (e) {
       emit(ProductErrorStates(erorrMessage: e.toString()));

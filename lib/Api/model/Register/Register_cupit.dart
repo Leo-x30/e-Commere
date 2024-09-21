@@ -1,6 +1,5 @@
 import 'package:e_commerce/Api/Api_manager.dart';
 import 'package:e_commerce/Api/model/Register/Register_States.dart';
-import 'package:e_commerce/Data/SharedPreference_pacakge.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -27,7 +26,6 @@ class RegisterCupit extends Cubit<RegisterStates> {
         emit(RegisterErrorStates(errorMessage: response.message!));
       } else {
         emit(RegisterSuccessStates(response: response));
-        SharedpreferenceUtils.setData(key: "token", value: response.token);
       }
     } catch (e) {
       emit(RegisterErrorStates(errorMessage: e.toString()));

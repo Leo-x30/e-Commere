@@ -1,4 +1,3 @@
-import 'package:e_commerce/Data/SharedPreference_pacakge.dart';
 import 'package:e_commerce/UI/Cart.dart';
 import 'package:e_commerce/UI/Home_Screen.dart';
 import 'package:e_commerce/UI/Login_Screen.dart';
@@ -7,26 +6,11 @@ import 'package:e_commerce/UI/ProductDetails.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-void main() async {
-  String route;
-  WidgetsFlutterBinding.ensureInitialized();
-  await SharedpreferenceUtils.init();
-  var token = await SharedpreferenceUtils.getData(key: "token");
-  if (token == null) {
-    route = LoginScreen.routName;
-  } else {
-    route = HomeScreen.routName;
-  }
-
-  runApp(MyApp(
-    route: route,
-  ));
+void main() {
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  String route;
-  MyApp({required this.route});
-
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
@@ -36,7 +20,7 @@ class MyApp extends StatelessWidget {
         builder: (context, child) {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
-            initialRoute: route,
+            initialRoute: LoginScreen.routName,
             routes: {
               SignUpScreen.routName: (context) => SignUpScreen(),
               LoginScreen.routName: (context) => LoginScreen(),

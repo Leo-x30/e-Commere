@@ -1,7 +1,6 @@
 import 'package:e_commerce/Api/model/Login/Login_States.dart';
 import 'package:e_commerce/Api/model/Login/Login_cupit.dart';
 import 'package:e_commerce/Data/DialogUtils.dart';
-import 'package:e_commerce/Data/SharedPreference_pacakge.dart';
 import 'package:e_commerce/Data/appColor.dart';
 import 'package:e_commerce/UI/SignUp_Screen.dart';
 import 'package:flutter/material.dart';
@@ -43,9 +42,6 @@ class _LoginScreenState extends State<LoginScreen> {
             content: "Login Success",
             posActionName: "ok",
           );
-
-
-          SharedpreferenceUtils.setData(key: 'userToken', value: '');
 
         }
       },

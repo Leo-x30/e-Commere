@@ -1,4 +1,3 @@
-import 'package:e_commerce/Data/SharedPreference_pacakge.dart';
 import 'package:e_commerce/UI/Login_Screen.dart';
 import 'package:flutter/material.dart';
 
@@ -17,15 +16,9 @@ class _ProfilepageState extends State<Profilepage> {
   @override
   void initState() {
     super.initState();
-    _loadUserData();
   }
 
-  Future<void> _loadUserData() async {
-    fullName = await SharedpreferenceUtils.getData(key: "fullName") ?? '';
-    email = await SharedpreferenceUtils.getData(key: "email") ?? '';
-    mobile = await SharedpreferenceUtils.getData(key: "mobile") ?? '';
-    setState(() {});
-  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -47,14 +40,13 @@ class _ProfilepageState extends State<Profilepage> {
                         style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                       ),
                       Text(
-                        email.isNotEmpty ? email : 'your email.com',
+                        email.isNotEmpty ? email : 'route@gmail.com',
                         style: TextStyle(color: Colors.grey),
                       ),
                     ],
                   ),
                   IconButton(
                     onPressed: () async {
-                      await SharedpreferenceUtils.deleteData(key: "token");
                       Navigator.pushReplacementNamed(context, LoginScreen.routName);
                     },
                     icon: Icon(Icons.logout_outlined),
@@ -62,10 +54,10 @@ class _ProfilepageState extends State<Profilepage> {
                 ],
               ),
               SizedBox(height: 32),
-              buildProfileField('Your full name', fullName),
-              buildProfileField('Your E-mail', email),
-              buildProfileField('Your password', '', obscureText: true),
-              buildProfileField('Your mobile number', mobile),
+              buildProfileField('Your full name', 'abelrhmanHany'),
+              buildProfileField('Your E-mail', 'abelrhmanHany@gmail.com'),
+              buildProfileField('Your password', '123456', obscureText: true),
+              buildProfileField('Your mobile number', '***********'),
               buildProfileField('Your Address', 'alexandria-egypt'),
             ],
           ),
