@@ -9,8 +9,8 @@ class LoginCupit extends Cubit<LoginStates> {
   var formKey = GlobalKey<FormState>();
   var obscureText = false;
 
-  var emailController = TextEditingController(text: "");
-  var passwordController = TextEditingController(text: "");
+  var emailController = TextEditingController(text: "abdo");
+  var passwordController = TextEditingController(text: "123456");
 
   void Login() async {
     try {

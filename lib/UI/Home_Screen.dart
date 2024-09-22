@@ -1,4 +1,4 @@
-import 'package:e_commerce/Data/CustomBottomBar.dart';
+import 'package:e_commerce/Data/BottomNavigation.dart';
 import 'package:e_commerce/UI/Tabs/Category.dart';
 import 'package:e_commerce/UI/Tabs/Favourites.dart';
 import 'package:e_commerce/UI/Tabs/Home.dart';
