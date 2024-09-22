@@ -37,8 +37,6 @@ class Dialogutils {
           onPressed: () {
             Navigator.pop(context);
             Navigator.pushReplacementNamed(context, HomeScreen.routName);
-
-            // posAction!.call();
           },
           child: Text(posActionName)));
     }
@@ -46,7 +44,6 @@ class Dialogutils {
       actions.add(ElevatedButton(
           onPressed: () {
             Navigator.pop(context);
-            // nigAction!.call();
           },
           child: Text(nigActionName)));
     }

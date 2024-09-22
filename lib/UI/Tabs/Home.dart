@@ -62,7 +62,7 @@ class Home extends StatelessWidget {
                       ),
                       InkWell(child: Icon(Icons.shopping_cart, color: Colors.blue),
                       onTap: (){
-                        Navigator.of(context).pushNamed(Cart.routname);
+                        Navigator.of(context).pushNamed(Cartscreen.routename);
                       },),
                     ],
                   ),

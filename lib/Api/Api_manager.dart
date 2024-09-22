@@ -1,5 +1,9 @@
 import 'dart:convert';
+import 'package:dartz/dartz.dart';
 import 'package:e_commerce/Api/EndPoints.dart';
+import 'package:e_commerce/Api/errors.dart';
+import 'package:e_commerce/Api/model/Cart/AddToCart.dart';
+import 'package:e_commerce/Api/model/Cart/CartResponse.dart';
 import 'package:e_commerce/Api/model/Home/categoryOrBrand_response.dart';
 import 'package:e_commerce/Api/model/Login/login_request.dart';
 import 'package:e_commerce/Api/model/Login/login_response.dart';
@@ -76,5 +80,43 @@ class Api_maneger {
       throw e;
     }
   }
+  static Future<Either<Failures, AddToCartResponse>> addCartData(
+      String productId) async {
+    Uri url = Uri.https(baseUrl, Endpoints.addToCart);
 
+    try {
+      var response = await http.post(url,
+          body: {'productId': productId});
+      var bodyString = response.body;
+      var json = jsonDecode(bodyString);
+      var addToCartResponse = AddToCartResponse.fromJson(json);
+
+      if (response.statusCode >= 200 && response.statusCode < 300) {
+        return Right(addToCartResponse);
+      } else {
+        return Left(ServerError(errorMessage: addToCartResponse.message!));
+      }
+    } catch (e) {
+      return Left(NetworkError(errorMessage: "No Internet Connection"));
+    }
+  }
+
+  static Future<Either<Failures, GetCartResponse>> getCart() async {
+    Uri url = Uri.https(baseUrl, Endpoints.addToCart);
+
+    try {
+      var response = await http.get(url,);
+      var bodyString = response.body;
+      var json = jsonDecode(bodyString);
+      var getCartResponse = GetCartResponse.fromJson(json);
+
+      if (response.statusCode >= 200 && response.statusCode < 300) {
+        return Right(getCartResponse);
+      } else {
+        return Left(ServerError(errorMessage: getCartResponse.message!));
+      }
+    } catch (e) {
+      return Left(NetworkError(errorMessage: 'error'));
+    }
+  }
 }
